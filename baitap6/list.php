@@ -10,5 +10,9 @@
         <li><a href="./bai9.php">BT9</a></li>
         <li><a href="./bai10.php">BT10</a></li>
         <li><a href="./bai11.php">BT11</a></li>
+        <li><a href="./bai12.php">BT12</a></li>
+        <li><a href="./bai13.php">BT13</a></li>
+        <li><a href="./bai14.php">BT14</a></li>
+        <li><a href="./bai15.php">BT15</a></li>
     </ul>
 </aside>

@@ -18,7 +18,7 @@
     <section>
         <?php include("list.php") ?>
         <main>
-            <?php include("../baitap7.php") ?>
+            <?php include("../baitap11.php") ?>
         </main>
     </section>
 
@@ -49,7 +49,7 @@
     <section>
         <?php include("list.php") ?>
         <main>
-            <?php include("../baitap7.php") ?>
+            <?php include("../baitap11.php") ?>
         </main>
     </section>
 
