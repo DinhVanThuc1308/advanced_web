@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "insert into morning (title,content,author) values ('$title','$content','$author')";
             if (mysqli_query($conn, $sql)) {
                 echo "Thêm thành công";
+                header("Location: bai18.php", true, 301);
             } else {
                 echo "Thêm thất bại";
             }
