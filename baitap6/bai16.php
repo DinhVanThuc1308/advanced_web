@@ -1,3 +1,4 @@
+</html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +19,7 @@
     <section>
         <?php include("list.php") ?>
         <main>
-            <?php include("../baitap4.php") ?>
+            <?php include("../baitap16.php") ?>
         </main>
     </section>
 
@@ -26,3 +27,6 @@
 
 
 </body>
+
+
+</html>
