@@ -17,6 +17,8 @@ $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname) or die("Không th�
             <td>title</td>
             <td>content</td>
             <td>author</td>
+            <td> Sửa </td>
+            <td> Xóa </td>
         </tr>
         <?php
         $sql = "select * from morning  order by id desc limit 10";
@@ -33,6 +35,16 @@ $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname) or die("Không th�
                     </td>
                     <td><?php echo $row["content"] ?></td>
                     <td><?php echo $row["author"] ?></td>
+                    <td>
+                        <a href="../baitap6/bai20.php?id=<?= $row['id'] ?>">
+                            Sửa
+                        </a>
+                    </td>
+                    <td>
+                        <a onclick="deleteConfirm()" href="../baitap6/bai21.php?id=<?= $row['id'] ?>">
+                            Xóa
+                        </a>
+                    </td>
                 </tr>
         <?php
             }
@@ -43,3 +55,8 @@ $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname) or die("Không th�
         ?>
     </table>
 </div>
+<script>
+    function deleteConfirm() {
+        return confirm("Bạn có chắc chắn muốn xoá bài viết này không?");
+    }
+</script>

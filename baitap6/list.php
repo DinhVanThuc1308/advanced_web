@@ -18,5 +18,7 @@
         <li><a href="./bai17.php">BT17</a></li>
         <li><a href="./bai18.php">BT18</a></li>
         <li><a href="./bai19.php">BT19</a></li>
+        <li><a href="./bai20.php">BT20</a></li>
+        <li><a href="./bai21.php">BT21</a></li>
     </ul>
 </aside>
