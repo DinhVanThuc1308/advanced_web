@@ -6,8 +6,9 @@ $dbname = "news";
 $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname) or die("Không thể kết nối database");
 
 ?>
+
 <div>
-    <a href="baitap17.php">Thêm bài viết</a>
+    <a href="../baitap6/bai17.php">Thêm bài viết</a>
 
 
     <table border=1>
@@ -25,7 +26,11 @@ $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname) or die("Không th�
             while ($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
                     <td><?php echo $row["id"] ?></td>
-                    <td><?php echo $row["title"] ?></td>
+                    <td>
+                        <a href="../baitap6/bai19.php?id=<?= $row['id'] ?>">
+                            <?php echo $row["title"] ?>
+                        </a>
+                    </td>
                     <td><?php echo $row["content"] ?></td>
                     <td><?php echo $row["author"] ?></td>
                 </tr>
