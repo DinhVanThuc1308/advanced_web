@@ -22,7 +22,7 @@ $dbname = "news";
 $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname) or die("Không thể kết nối database");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if ($_POST["title"] != "" && $_POST["content"] != "" && $_POST["content"]) {
+    if ($_POST["title"] != "" && $_POST["content"] != "" && $_POST["author"] != "") {
         $title = $_POST["title"];
         $content = $_POST["content"];
         $author = $_POST["author"];

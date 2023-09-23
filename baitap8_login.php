@@ -21,15 +21,38 @@
     </style>
 
     <?php
+
+    $dbserver = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $dbname = "news";
+    $conn = mysqli_connect($dbserver, $dbuser, $dbpass, $dbname) or die("Không thể kết nối database");
     $isLogin = false;
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $user = $_POST['username'] ?? "";
         $pass = $_POST['password'] ?? "";
-        if ($user == 'ABC' && $pass == '123') {
-            $isLogin = true;
-            echo 'Đăng nhập thành công';
 
-            $_SESSION['username'] = $user;
+        $sql = "SELECT * FROM account WHERE username='$user' ";
+
+
+
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            $password_hash = mysqli_fetch_assoc($result)['password'];
+            $verify = password_verify($pass, $password_hash);
+            if ($verify) {
+                $isLogin = true;
+                echo 'Đăng nhập thành công';
+                $_SESSION['username'] = $user;
+            } else {
+                echo 'Đăng nhập thất bại';
+            }
+
+            // $isLogin = true;
+            // echo 'Đăng nhập thành công';
+            // $_SESSION['username'] = $user;
+
         }
     }
     if (!$isLogin) {
@@ -40,7 +63,10 @@
             <input type="password" name="password" placeholder="password">
             </br>
             <input type="submit" name='submit' value="Đăng nhập">
+            <!-- thêm nút đăng ký link đến baitap23_register -->
+            <a href="baitap23_register.php">Đăng ký</a>
         </form>
+
     <?php
         echo 'Đăng nhập thất bại';
     }
